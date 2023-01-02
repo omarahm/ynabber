@@ -99,6 +99,15 @@ func transactionsToYnabber(cfg ynabber.Config, account ynabber.Account, t nordig
 		// Append transaction
 		x = append(x, transaction)
 	}
+	for _, v := range t.Transactions.Pending {
+		transaction, err := transactionToYnabber(cfg, account, v)
+		if err != nil {
+			return nil, err
+		}
+		// Append transaction
+		x = append(x, transaction)
+	}
+	
 	return x, nil
 }
 
