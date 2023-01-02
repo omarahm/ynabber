@@ -1,4 +1,4 @@
-module github.com/martinohansen/ynabber
+module github.com/omarahm/ynabber
 
 go 1.17
 
